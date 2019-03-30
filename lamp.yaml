@@ -1,0 +1,6 @@
+---
+ - hosts: lampgrp
+   roles:
+     - lamp-install
+     - lamp-config
+

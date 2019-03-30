@@ -1,0 +1,11 @@
+---
+ - hosts: group
+   become: true
+   tasks:
+      
+     - name: installing mariadb
+       yum: name=mariadb tate=installed
+       register: mariadb_install
+     - name: starting mariadb service
+       service: name=mariadb stste=started enabled:yes
+       when: mariadb_install|success
